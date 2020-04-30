@@ -1,0 +1,266 @@
+<!DOCTYPE html> 
+<html> 
+<style> 
+	
+	/*assign full width inputs*/ 
+	input[type=text], 
+	input[type=password] { 
+		width: 100%; 
+		padding: 12px 20px; 
+		margin: 8px 0; 
+		display: inline-block; 
+		border: 1px solid #ccc; 
+		box-sizing: border-box; 
+	} 
+	
+	/*set a style for the buttons*/ 
+	button { 
+		background-color: #0000FF; 
+		color: white; 
+		padding: 14px 20px; 
+		margin: 8px 0; 
+		border: none; 
+		cursor: pointer; 
+		width: 100%; 
+	} 
+	
+	/* set a hover effect for the button*/ 
+	button:hover { 
+		opacity: 0.8; 
+	} 
+	
+	/*set a style for the citi credit card*/ 
+	credit { 
+		text-align: center; 
+		margin: 24px 0 12px 0; 
+		position: relative;  
+		width:50px;
+		height:60px;
+	}
+	
+	/*set extra style for the cancel button*/ 
+	.cancelbtn { 
+		width: auto; 
+		padding: 10px 18px; 
+		background-color: 	#0000FF; 
+	} 
+	
+	/*centre the display image inside the container*/ 
+	.imgcontainer { 
+		text-align: center; 
+		margin: 24px 0 12px 0; 
+		position: relative; 
+	} 
+	
+	/*set image properties*/ 
+	img.avatar { 
+		width: 40%; 
+		border-radius: 50%; 
+	} 
+	
+	/*set padding to the container*/ 
+	.container { 
+		padding: 16px; 
+	} 
+	
+	/*set the forgot password text*/ 
+	span.psw { 
+		float: right; 
+		padding-top: 16px; 
+	} 
+	
+	/*set the Modal background*/ 
+	.modal { 
+		display: none; 
+		position: fixed; 
+		z-index: 1; 
+		left: 0; 
+		top: 0; 
+		width: 100%; 
+		height: 100%; 
+		overflow: auto; 
+		background-color: rgb(0, 0, 0); 
+		background-color: rgba(0, 0, 0, 0.4); 
+		padding-top: 60px; 
+	} 
+	
+	/*style the model content box*/ 
+	.modal-content { 
+		background-color: #fefefe; 
+		margin: 5% auto 15% auto; 
+		border: 1px solid #888; 
+		width: 60%; 
+	} 
+	
+	/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #0baade;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #6ad8fc;
+  color: black;
+}
+	
+	/*style the close button*/ 
+	.close { 
+		position: absolute; 
+		right: 25px; 
+		top: 0; 
+		color: #000; 
+		font-size: 35px; 
+		font-weight: bold; 
+	} 
+	
+	.close:hover, 
+	.close:focus { 
+		color: blue; 
+		cursor: pointer; 
+	} 
+	
+	/* add zoom animation*/ 
+	.animate { 
+		-webkit-animation: animatezoom 0.6s; 
+		animation: animatezoom 0.6s 
+	} 
+	
+	@-webkit-keyframes animatezoom { 
+		from { 
+			-webkit-transform: scale(0) 
+		} 
+		to { 
+			-webkit-transform: scale(1) 
+		} 
+	} 
+	
+	@keyframes animatezoom { 
+		from { 
+			transform: scale(0) 
+		} 
+		to { 
+			transform: scale(1) 
+		} 
+	} 
+	
+	@media screen and (max-width: 300px) { 
+		span.psw { 
+			display: block; 
+			float: none; 
+		} 
+		.cancelbtn { 
+			width: 100%; 
+		} 
+	} 
+</style> 
+
+<body> 
+<div class="topnav">
+  <a class="active" href="#home">PayPal</a>
+  <a href="#news">For You</a>
+  <a href="#contact">Fr the Business</a>
+  <a href="#about">Set-Up</a>
+  <a href="#about">Help</a>
+</div>
+  <div>
+  <h1>Welcome to the Citi credit landing Page</h1> 
+  <ul className="header">
+  <h3>Purchase above $99+:</h3>
+  <h3>No interest if paid full in 6 months on purchase of $99 or more</h3>
+  	<img src= "https://res.cloudinary.com/value-penguin/image/upload/dpr_1.0,f_auto,q_auto/v1504191286/paypal-mastercard_uyeqbe.png" alt="credit" class="credit"> 
+  </div>
+	<!--Step 1 : Adding HTML-->
+	
+	 <div ng-if="UserInfo.approvedTermsAndConditions || !UserInfo.isAuthenticated">
+	<ncy-breadcrumb></ncy-breadcrumb>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			  <form class ="main-tnc" action="/action_page.php" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+				<div class="panel panel-default" style="margin-top:10px;">
+					<div class="panel-body" style="max-height:180px; overflow-y:scroll; background-color:white;">
+						<div style="text-align:center;">
+							<h1>Terms and Conditions</h1>
+							<p>
+								Welcome to Website Name!
+								These terms and conditions outline the rules and regulations for the use of Company Name's Website, located at Website.com.
+								By accessing this website we assume you accept these terms and conditions. Do not continue to use Website Name if you do not agree to take all of the terms and conditions stated on this page.
+								The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: 'Client', 'You' and 'Your' refers to you, the person log on this website and compliant to the Company's terms and conditions. 'The Company', 'Ourselves', 'We', 'Our' and 'Us', refers to our Company. 'Party', 'Parties', or 'Us', refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client's needs in respect of provision of the Company's stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.
+								Cookies
+                                We employ the use of cookies. By accessing Website Name, you agreed to use cookies in agreement with the Company Name's Privacy Policy.
+                                Most interactive websites use cookies to let us retrieve the user's details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
+                                License
+                                Unless otherwise stated, Company Name and/or its licensors own the intellectual property rights for all material on Website Name. All intellectual property rights are reserved. You may access this from Website Name for your own personal use subjected to restrictions set in these terms and conditions.
+                                You must not:
+                                Republish material from Website Name
+                                Sell, rent or sub-license material from Website Name
+                                Reproduce, duplicate or copy material from Website Name
+                                Redistribute content from Website Name
+                                This Agreement shall begin on the date hereof.
+                                Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of the website. Company Name does not filter, edit, publish or review Comments prior to their presence on the website. Comments do not reflect the views and opinions of Company Name,its agents and/or affiliates. Comments reflect the views and opinions of the person who post their views and opinions. To the extent permitted by applicable laws, Company Name shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div style="text-align:center;" ng-if="settings.Authentication.RequireTermsAndConditions && !UserInfo.approvedTermsAndConditions && UserInfo.isAuthenticated">
+				<input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions and Privacy Policy
+				<div>
+				 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Apply Now</button>
+				 </div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+	
+	<div id="id01" class="modal"> 
+    
+	<form class="modal-content animate" action="/action_page.php">
+		
+			<div class="imgcontainer"> 
+				<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> 
+				<img src= "http://logosvg.com/wp-content/uploads/PayPal_logo.svg" alt="Avatar" class="avatar"> 
+			</div> 
+
+			<div class="container"> 
+				<label><b>Username</b></label> 
+				<input type="text" placeholder="Enter Username" name="uname" required> 
+
+				<label><b>Password</b></label> 
+				<input type="password" placeholder="Enter Password" name="psw" required> 
+
+				<button type="submit">Login</button> 
+				<input type="checkbox" checked="checked"> Remember me 
+
+			</div> 
+
+			<div class="container" style="background-color:#f1f1f1"> 
+				<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> 
+				<span class="psw">Forgot <a href="#">password?</a></span> 
+			</div> 
+		</form> 
+	</div> 
+
+	<script> 
+		var modal = document.getElementById('id01'); 
+		window.onclick = function(event) { 
+			if (event.target == modal) { 
+				modal.style.display = "none"; 
+			} 
+		} 
+	</script> 
+</body> 
+
+</html> 

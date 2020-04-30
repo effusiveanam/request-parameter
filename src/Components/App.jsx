@@ -22,7 +22,6 @@ class App extends Component {
           <ul className="header">
             <h2>Purchase od $99+:</h2>
             <h2>No interest if paid full in 6 months on purchase of $99 or more</h2>
-            <li><a href="/stuff">Stuff</a></li>
           </ul>
         </div>
       </Router>
